@@ -1,6 +1,6 @@
 Section 1
 
-The application has a user interface tier with Thymeleaf templates for dashboard views and Rest API consumer  for all other modules, an application layer with  both MVC and REST controllers, services, and business logic and a data tier with MySQL for structured data  and MongoDB for flexible data. 
+The application has a user interface tier with Thymeleaf templates for dashboard views and Rest API consumer for all other modules, an application layer with  both MVC and REST controllers, services, and business logic and a data tier with MySQL for structured data  and MongoDB for flexible data. 
 
 Section 2
 
