@@ -1,0 +1,60 @@
+As an admin, you can: 
+
+	•	Log into the portal with your username and password to manage the platform securely  
+ 
+**Title:**
+_As an admin, I want to log into the portal with your username and password, so that I can manage the platform securely._ 
+**Acceptance Criteria:**
+1. Admin has a username and password
+2. Admin logged in successfully to the platform with the credentials
+3. [Admin can see that he has the rights to manage the platform
+**Priority:** High
+**Story Points:** 8
+**Notes:** - Admin checks that Doctor has no rights to manage the platform, Admin has the management rights to create and delete users
+
+	•	Log out of the portal to protect system access  
+**Title:
+** _As an admin, I want to log out of the portal, so that I can protect the platform access _ 
+**Acceptance Criteria:**
+1. Admin can select log out from the portal as a logged in user]
+2. Admin has verification that he has been logged out
+3. Admin cannot access the platform anymore, i.e. the page formerly visited as logged in user
+**Priority:** Low
+**Story Points:** 3
+**Notes:** - 
+
+	•	Add doctors to the portal 
+
+**Title:** 
+_As an admin, I can manage users on the platform, so that I can add doctors to it._ 
+**Acceptance Criteria:**
+1. Admin can select manage users from the portal as a logged in user
+2. Admin can add doctors to the platform
+3. Admin can see that added doctors are successfully created on the platform
+**Priority:** Medium
+**Story Points:** 5
+**Notes:** - 
+
+	•	Delete doctor's profile from the portal 
+
+**Title:** 
+_As an admin, I can manage users on the platform, so that I can delete doctors to it._ 
+**Acceptance Criteria:**
+1. Admin can select manage users from the portal as a logged in user]
+2. Admin can delete doctors to the platform]
+3. Admin can see that deleted doctors are deleted on the platform while the non deleted remain on the platform]
+**Priority:** Low**
+Story Points:** 3
+**Notes:** - 
+
+	•	Run a stored procedure in MySQL CLI to get the number of appointments per month and track usage statistics 
+
+**Title:**
+_As an admin, I can run a stored procedure in MySQL on the platform, so that I can get the number of appointments per month and track usage statistics._ 
+**Acceptance Criteria:**
+1. Admin can run a stored procedure in MySQL as a logged in user
+2. Admin gets the correct number of appointments per month after successful completion of the procedure
+3. Admin gets the correct usage statistics per month after successful completion of the procedure
+**Priority:** Medium
+**Story Points:** 8
+**Notes:** - Admin has rights to run stored procedure and the needed stored procedures have been created in MySQL already 
