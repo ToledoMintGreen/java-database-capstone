@@ -1,60 +1,0 @@
-Patients interact with the portal to find doctors and manage appointments.
-
-As a patient, you can:  
-	•	View a list of doctors without logging in to explore options before registering  
-
-**Title:** 
-_As a patient, I want to view a list of doctors without logging in, so that I can explore options for available doctors before registering._ 
-**Acceptance Criteria:** 
-1. Patient can successfully navigate to a section that shows the doctors on the platform without logging in
-2. Patient can see the registered doctors on the platform without logging in 
-3. Patient can see the registered doctors as a list 
-**Priority:** Low
-**Story Points:** 3 
-**Notes:** - Admin has to create doctors beforehand against which are checked as present on the platform
-
-	•	Sign up using your email and password to book appointments 
-**Title:**
-_As a patient, I can sign up to the platform using email and password, so that I can book appointments with doctors._ 
-**Acceptance Criteria:** 
-1. Patient can successfully navigate to a section to make appointments with available doctors after logging in successfully with username and password]
-2. Patient has successfully booked appointments with an available doctor
-3. Patient has successfully booked appointments with another available doctor
- **Priority:** High 
-**Story Points:** 8
-**Notes:** - Doctors have been created that are available on default weekdays from 9 to 5, those who have marked their availability, and all bookable appointments need to be in future
-
-	•	Log into the portal to manage your bookings  
-**Title:** 
-_As a patient, I want to log into the portal with your username and password, so that I can manage my bookings with doctors._ 
-**Acceptance Criteria:** 
-1. Patient can successfully navigate to a section to change appointments with available doctors after logging in successfully with username and password 
-2. Patient can change booked appointments with an available doctor 
-3. Patient can change booked appointments with another available doctor 
-**Priority:** Low 
-**Story Points:** 3 
-**Notes:** - Doctors have been created that are available on default weekdays from 9 to 5, those who have marked their availability, and all bookable appointments need to be in future
-
-	•	Log out of the portal to secure your account  
-**Title:**
-_As a patient, I want to log out of the portal, so that I can secure my account._ 
-**Acceptance Criteria:** 
-1. Patient can select log out from the portal as a logged in user
-2. Patient has verification that he has been logged out
-3. Patient cannot access the appointments anymore 
-**Priority:** Low 
-**Story Points:** 3
-**Notes:** - Additional information or edge cases
-
-	•	Log in and book an hour-long appointment to consult with a doctor  
- **Title:** 
- _As a patient, I want to book an hour-long appointment as logged in user, so that I can consult with a doctor_ 
- **Acceptance Criteria:** 
- 1. Patient can successfully navigate to a section to make 1 hour appointments with available doctors after logging in successfully with username and password
- 2. Patient can see 1 hour appointments with an available doctor 
- 3. Patient can successfully book 1 hour appointments with an available doctor
- **Priority:** Low
- **Story Points:** 3
- **Notes:** - Doctors have been created that are available on default weekdays from 9 to 5 for 15 minutes, those marked their availability for 1 hour appointment, and all bookable appointments need to be in future
-	•	View my upcoming appointments so that I can prepare accordingly 
-**Title:** _As a patient, I want to view upcoming appointments, so that I can prepare accordingly._ **Acceptance Criteria:** 1. [Patient can successfully navigate to a section to view upcoming appointments with available doctors after logging in successfully with username and password] 2. [Patient can see upcoming appointments with doctors] 3. [Patient cannot see past appointments with doctors in that section] **Priority:** [Medium] **Story Points:** [5] **Notes:** - [Additional information or edge cases] 
