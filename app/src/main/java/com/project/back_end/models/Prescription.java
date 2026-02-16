@@ -1,5 +1,16 @@
 package com.project.back_end.models;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import java.time.LocalDateTime;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.annotation.Id;
+
+import com.project.back_end.models.Doctor; 
+import com.project.back_end.models.Patient; 
+import com.project.back_end.models.Appointment; 
+
+
 @Document(collection = "prescriptions")
 public class Prescription {
 	@Id
@@ -22,10 +33,10 @@ public class Prescription {
 	@Size(min = 3, max = 100)
 	private String pharmacyName;
 	// Getters and setters
-	public Long getId() {
+	public String getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }	
 	public String getPatientName() {
@@ -34,7 +45,7 @@ public class Prescription {
 	public void setPatientName(String patientName) {
         this.patientName = patientName;
 	}
-	public Long getappointmentId() {
+	public Long getAppointmentId() {
         return appointmentId;
     }
     public void setAppointmentId(Long appointmentId) {
@@ -48,7 +59,7 @@ public class Prescription {
         this.medication = medication;
     }
 	public String getDosage() {
-        return doctorNotes;
+        return dosage;
     }
     public void setDosage(String dosage) {
         this.dosage = dosage;
@@ -57,20 +68,20 @@ public class Prescription {
    	public String getDoctorNotes() {
         return doctorNotes;
     }
-    public void setDoctorNotes t(String doctorNotes) {
+    public void setDoctorNotes (String doctorNotes) {
         this.doctorNotes = doctorNotes;
     }
 	public Long getRefillCount() {
         return refillCount;
     }
-    	public void setRefillCount(Long refillCount) {
+    public void setRefillCount(Long refillCount) {
         this.refillCount = refillCount;
     }
 	public String getPharmacyName() {
         return pharmacyName;
     }
-    	public void setPharmacyName(String patientName) {
-        this.pharmacyName = pharmactName;
+    public void setPharmacyName(String pharmacyName) {
+        this.pharmacyName = pharmacyName;
     }
 } 
 
@@ -129,4 +140,3 @@ public class Prescription {
 //    - These methods allow access and modification of the fields of the Prescription class.
 
 
-}

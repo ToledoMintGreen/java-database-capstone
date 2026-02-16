@@ -1,5 +1,13 @@
 package com.project.back_end.models;
 
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import java.time.LocalDateTime;
+
+import com.project.back_end.models.Doctor; 
+import com.project.back_end.models.Patient; 
+
 @Entity
 public class Appointment {
 	@Id
@@ -21,8 +29,9 @@ public class Appointment {
 	// Add additional fields
 	// Appointment: Add reasonForVisit or notes
 	// Limit string lengths using @Size(min, max) to avoid unexpected inputs
-	private String doctorNotes
 	@Size(min = 1, max = 100)
+    private String doctorNotes;
+	
 
 	// Getters and setters
 	public Long getId() {
@@ -31,35 +40,29 @@ public class Appointment {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getDoctor() {
+    public Doctor getDoctor() {
         return doctor;
     }
-    public void setDoctor(String doctor) {
+    public void setDoctor(Doctor doctor) {
         this. doctor = doctor;
     }
-   	public String getPatient() {
+   	public Patient getPatient() {
         return patient;
     }
-    public void setPatient(String patient) {
+    public void setPatient(Patient patient) {
         this.patient = patient;
     }
-	public LocalDateTime appointmentTime {
-        this.appointmentTime = appointmentTime;
-    }
-	public LocalDateTime getappointmentTime() {
-        return appointmentTime;
-    }
-	public int status	{
-        this.status = status;
-    }
-	public int getStatus() {
+    public int getStatus() {
         return status;
     }
-	public String doctorNotes	{
-        this.doctorNotes = doctorNotes;
+	public void setStatus(int status) {
+        this.status = status;
     }
-	public String getdoctorNotes() {
+    public String getDoctorNotes() {
         return doctorNotes;
+    }
+	public void setDoctorNotes(String doctorNotes) {
+        this.doctorNotes = doctorNotes;
     }
 }
 

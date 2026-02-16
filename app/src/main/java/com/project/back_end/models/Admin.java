@@ -1,13 +1,18 @@
 package com.project.back_end.models;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 public class Admin {
     @Id	
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;	
-    @NotNull(message = "Username cannot be null")
+    private Long id;
     // Enhance JSON handling
     // Customize field names in JSON using @JsonProperty("customName")
+    @NotNull(message = "Username cannot be null")
     @JsonProperty("username")
     private String username;
     @NotNull

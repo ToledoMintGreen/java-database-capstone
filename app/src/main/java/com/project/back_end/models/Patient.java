@@ -1,5 +1,15 @@
 package com.project.back_end.models;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import java.time.LocalDateTime;
+import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
+
 
 @Entity
 public class Patient {
@@ -17,6 +27,8 @@ public class Patient {
 	private String password;
     @Pattern(regexp = "\\d{10}")
     private String phone;
+    @Pattern(regexp = "^[a-zA-Z0-9\\s.,'#-]{1,100}$", message = "Excluded are all nonASCII characters (including emojis)")
+    private String address;
 	// Add additional fields	
     // For Patient: Add dateOfBirth, emergencyContact, or insuranceProvider
 	// Use @Past for dateOfBirth to ensure dates are in the past
@@ -48,20 +60,32 @@ public class Patient {
     public void setEmail(String email) {
         this.email = email;
     }
-    public LocalDate dateOfBirth() {
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+     public String getAddress() {
+        return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
-    public void set dateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-	public String emergencyContact() {
+	public String getEmergencyContact() {
         return emergencyContact;
     }
     public void setEmergencyContact(String emergencyContact) {
         this.emergencyContact = emergencyContact;
     }
-	public String insuranceProvider() {
-        return rating;
+	public String getInsuranceProvider() {
+        return insuranceProvider;
     }
     public void setInsuranceProvider(String insuranceProvider) {
         this.insuranceProvider = insuranceProvider;
@@ -126,5 +150,3 @@ public class Patient {
 //    - These methods allow access and modification of the fields of the Patient class.
 
   
-
-}

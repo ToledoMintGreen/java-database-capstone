@@ -1,12 +1,21 @@
+package com.project.back_end.models;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import java.time.LocalDateTime;
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.ElementCollection;
+
 @Entity
 public class Doctor {
     @Id	
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Long id;	
-    @NotNull
-    @Size(min = 3, max = 100
+    @NotBlank
+    @Size(min = 3, max = 100)
     private String name;
-    @NotNull
+    @NotBlank
     @Size(min = 3, max = 50)
     private String specialty;
     @Email
@@ -26,7 +35,7 @@ public class Doctor {
     @Min(value = 1, message = "Doctors must have at least 1 year of experience")
     @Max(value = 99, message = "Doctors cannot have 99 year of experience")
     private Integer yearsOfExperience;
-    @Min(value = 1 message = "Doctors are rated at least 1")
+    @Min(value = 1, message = "Doctors are rated at least 1")
     @Max(value = 5, message = "Doctors cannot be rated higher than 5") 
     private Integer rating;	
     @ElementCollection	private List<String> availableTimes; 
@@ -57,25 +66,31 @@ public class Doctor {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String clinicAddress() {
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public String getClinicAddress() {
         return clinicAddress;
     }
-    public void set clinicAddress(String clinicAddress) {
+    public void setClinicAddress(String clinicAddress) {
         this.clinicAddress = clinicAddress;
     }
-	public Integer yearsOfExperience() {
+	public Integer getYearsOfExperience() {
         return yearsOfExperience;
     }
-    public void setYearsOfExperience(String yearsOfExperience) {
+    public void setYearsOfExperience(Integer yearsOfExperience) {
         this.yearsOfExperience = yearsOfExperience;
     }
-	public Integer rating() {
+	public Integer getRating() {
         return rating;
     }
-    public void setRating(String rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
-	public List<String> availableTimes() {
+	public List<String> getAvailableTimes() {
         return availableTimes;
     }
     public void setAvailableTimes(List<String> availableTimes) {
@@ -143,5 +158,5 @@ public class Doctor {
 // 8. Getters and Setters:
 //    - Standard getter and setter methods are provided for all fields: id, name, specialty, email, password, phone, and availableTimes.
 
-}
+//  
 
