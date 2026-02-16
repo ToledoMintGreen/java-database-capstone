@@ -1,6 +1,77 @@
 package com.project.back_end.models;
 
+
+@Entity
 public class Patient {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+	private Long id;
+    @NotNull
+    @Size(min = 3, max = 100)
+    private String name;
+    @Email
+    @NotNull
+    private String email;
+    @Size(min = 6)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) 
+	private String password;
+    @Pattern(regexp = "\\d{10}")
+    private String phone;
+	// Add additional fields	
+    // For Patient: Add dateOfBirth, emergencyContact, or insuranceProvider
+	// Use @Past for dateOfBirth to ensure dates are in the past
+	// Use @Pattern to validate phone numbers with a specific format (done before)
+	@Past
+      private LocalDate dateOfBirth;
+	@Size(min = 3, max = 50)
+	private String emergencyContact;
+	@Size(min = 3, max = 50)
+	private String insuranceProvider;
+
+	// Getters and setters
+
+	public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public LocalDate dateOfBirth() {
+        return dateOfBirth;
+    }
+    public void set dateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+	public String emergencyContact() {
+        return emergencyContact;
+    }
+    public void setEmergencyContact(String emergencyContact) {
+        this.emergencyContact = emergencyContact;
+    }
+	public String insuranceProvider() {
+        return rating;
+    }
+    public void setInsuranceProvider(String insuranceProvider) {
+        this.insuranceProvider = insuranceProvider;
+    }
+} 
+
+
+
+
+
 // @Entity annotation:
 //    - Marks the class as a JPA entity, meaning it represents a table in the database.
 //    - Required for persistence frameworks (e.g., Hibernate) to map the class to a database table.

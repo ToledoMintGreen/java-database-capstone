@@ -1,8 +1,69 @@
 package com.project.back_end.models;
 
+@Entity
 public class Appointment {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	private Long id;
+	@ManyToOne
+	@NotNull
+	private Doctor doctor;
+	@ManyToOne
+	@NotNull
+	private Patient patient;
+	@Future(message = "Appointment time must be in the future")
+	private LocalDateTime appointmentTime;
+	private int status; // 0 = Scheduled, 1 = Completed, 2 = Cancelled
+    @Transient
+    public LocalDateTime getEndTime() {
+	return appointmentTime.plusHours(1); 
+	}
+	// Add additional fields
+	// Appointment: Add reasonForVisit or notes
+	// Limit string lengths using @Size(min, max) to avoid unexpected inputs
+	private String doctorNotes
+	@Size(min = 1, max = 100)
 
-  // @Entity annotation:
+	// Getters and setters
+	public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getDoctor() {
+        return doctor;
+    }
+    public void setDoctor(String doctor) {
+        this. doctor = doctor;
+    }
+   	public String getPatient() {
+        return patient;
+    }
+    public void setPatient(String patient) {
+        this.patient = patient;
+    }
+	public LocalDateTime appointmentTime {
+        this.appointmentTime = appointmentTime;
+    }
+	public LocalDateTime getappointmentTime() {
+        return appointmentTime;
+    }
+	public int status	{
+        this.status = status;
+    }
+	public int getStatus() {
+        return status;
+    }
+	public String doctorNotes	{
+        this.doctorNotes = doctorNotes;
+    }
+	public String getdoctorNotes() {
+        return doctorNotes;
+    }
+}
+
+ // @Entity annotation:
 //    - Marks the class as a JPA entity, meaning it represents a table in the database.
 //    - Required for persistence frameworks (e.g., Hibernate) to map the class to a database table.
 
@@ -67,6 +128,3 @@ public class Appointment {
 
 // 10. Getters and Setters:
 //    - Standard getter and setter methods are provided for accessing and modifying the fields: id, doctor, patient, appointmentTime, status, etc.
-
-}
-

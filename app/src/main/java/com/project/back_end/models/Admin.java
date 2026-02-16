@@ -1,6 +1,38 @@
 package com.project.back_end.models;
 
+@Entity
 public class Admin {
+    @Id	
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;	
+    @NotNull(message = "Username cannot be null")
+    // Enhance JSON handling
+    // Customize field names in JSON using @JsonProperty("customName")
+    @JsonProperty("username")
+    private String username;
+    @NotNull
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String password;
+    // Getters and setters
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+} 
 
 // @Entity annotation:
 //    - Marks the class as a JPA entity, which means it represents a table in the database.
@@ -33,5 +65,3 @@ public class Admin {
 
 // 5. Getters and Setters:
 //    - Standard getter and setter methods are provided for accessing and modifying the fields.
-
-}

@@ -1,6 +1,88 @@
-package com.project.back_end.models;
-
+@Entity
 public class Doctor {
+    @Id	
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    private Long id;	
+    @NotNull
+    @Size(min = 3, max = 100
+    private String name;
+    @NotNull
+    @Size(min = 3, max = 50)
+    private String specialty;
+    @Email
+    @NotNull
+    private String email;
+    @Size(min = 6)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) 
+    private String password;
+    @Pattern(regexp = "\\d{10}")
+    private String phone;
+    // Add additional fields
+    // For Doctor: Add yearsOfExperience, clinicAddress, or rating
+    // Use @Pattern to validate phone numbers with a specific format (done before)
+    // Use @Min and @Max for fields like yearsOfExperience or rating
+    @Pattern(regexp = "^[a-zA-Z0-9\\s.,'#-]{1,100}$", message = "Excluded are all nonASCII characters (including emojis)")
+    private String clinicAddress;
+    @Min(value = 1, message = "Doctors must have at least 1 year of experience")
+    @Max(value = 99, message = "Doctors cannot have 99 year of experience")
+    private Integer yearsOfExperience;
+    @Min(value = 1 message = "Doctors are rated at least 1")
+    @Max(value = 5, message = "Doctors cannot be rated higher than 5") 
+    private Integer rating;	
+    @ElementCollection	private List<String> availableTimes; 
+
+    // Getters and setters
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getSpecialty() {
+        return specialty;
+    }
+    public void setSpecialty(String specialty) {
+        this. specialty = specialty;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String clinicAddress() {
+        return clinicAddress;
+    }
+    public void set clinicAddress(String clinicAddress) {
+        this.clinicAddress = clinicAddress;
+    }
+	public Integer yearsOfExperience() {
+        return yearsOfExperience;
+    }
+    public void setYearsOfExperience(String yearsOfExperience) {
+        this.yearsOfExperience = yearsOfExperience;
+    }
+	public Integer rating() {
+        return rating;
+    }
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+	public List<String> availableTimes() {
+        return availableTimes;
+    }
+    public void setAvailableTimes(List<String> availableTimes) {
+        this.availableTimes = availableTimes;
+    }
+
+} 
 
 // @Entity annotation:
 //    - Marks the class as a JPA entity, meaning it represents a table in the database.
