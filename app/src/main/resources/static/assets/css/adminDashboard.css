@@ -1,0 +1,263 @@
+/* This is the style sheet for the adminDashboard.html */
+
+
+/* Global Styling & Reset */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+
+/* Body and HTML styled for full height and use Ribito font */
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* Layout:  */
+/* Use .wrapper as a vertical flex container */
+/* Space and align .main-content elements for search, filters, and the table  */
+
+.main-content .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    width: 100%;
+    max-width: 1000px; 
+    padding: 2rem;
+    gap: 20px; 
+    min-height: 100vh;
+}
+
+
+
+/* Section Heading (`h2`)  */
+//* Properties:  */
+/* font-size: 32px — makes the heading large and noticeable. */
+/* 	font-weight: bold — emphasizes text.  */
+/* 	margin-bottom: 50px — creates space below the heading. */
+/*  color: #003e3e — uses a strong teal for visual anchoring/* 
+
+
+header h2 {
+   font-size: 32px;
+   font-weight: bold;	
+   color: #003e3e;
+   text-align: center;
+   margin-bottom: 50px;
+}
+
+
+
+
+
+/* Main Content Section (`.main-content`)
+/* Purpose: Layout the main content with padding and a background image./* 
+/* Properties:/* 
+/* `flex-grow: 1` — lets the content fill the available vertical space./* 
+/*  padding: 40px` — adds internal spacing around content./* 
+/* `display: flex` and `flex-direction: column` — organizes content in a vertical stack./* 
+/* `text-align: center` — centers the text./* 
+/* `background-image: url("index.png")` — sets a full-screen dashboard background./* 
+/* `background-size: cover` — ensures the image covers the whole section./* 
+/* `background-position: center` — centers the image./* 
+/* `background-repeat: no-repeat` — avoids tiling the image./* 
+/* `background-attachment: fixed` — fixes the image while scrolling./* 
+
+.main-content {
+	flex-grow: 1;
+	min-height: 100vh; /* container grows when content grows*/
+	
+    background-image: url('../assets/images/index.png');     
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    padding: 40px
+}
+
+
+.main-content .wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+
+
+
+
+/* Primary Button (`button`)/* 
+/* Purpose: Design prominent, interactive buttons for main actions./* 
+* Properties:/* 
+/* `background-color: #A62B1F` — sets a bold red color./* /
+/* `color: white` — makes text stand out./* 
+/* `border: none` — removes any outline/border./* 
+/* `border-radius: 12px` — creates rounded corners./* 
+/* `padding: 10px 20px` — gives space inside the button./* 
+/* `margin-top: 20px` — adds spacing above the button./* 
+/* `width: 200px` — ensures consistent button width./* 
+/* `cursor: pointer` — shows a hand icon on hover./* 
+/* `font-size: 16px` — makes the text readable./* 
+
+/* On Hover:/* 
+/* Retains the same red background to maintain branding./* 
+
+
+
+.button {
+    background-color: #A62B1F;
+    color: white;
+    font-weight: bold;
+    width: 110px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px
+}
+
+.button:hover{
+    background-color: #A62B1F;
+    color: #A62B1F;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+/* Admin Button (`.adminBtn`)/* 
+/* Purpose: Provide a secondary button style for admin-specific actions./* 
+/* Properties:/* 
+/* `background-color: #f4f4f4` — uses a light grey background./* 
+/*  `color: #333` — uses dark text for contrast./* 
+/* `font-weight: bold` — emphasizes text./* 
+/* `width: 110px` — smaller, compact width./* 
+/* `padding: 10px 0` — vertical padding only./* 
+/* `border: none` — clean look./* 
+/* `cursor: pointer` — indicates it's clickable./* 
+
+/* On Hover: /* 
+/* Changes text color to `#A62B1F` for brand consistency while keeping the background same. */
+
+.adminBtn {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+    width: 110px;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.adminBtn:hover{
+    color: #A62B1F;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+
+
+
+
+/* Modal Styling: /* 
+/* Ensure the modal is centered, hidden by default, and has smooth transitions /* 
+/* Style inputs inside the modal form with padding and focus effects /*
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; 
+    
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px; 
+    position: relative; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+.modal:focus {
+    border-color: #6a1b9a;
+    box-shadow: 0 0 5px rgba(106, 27, 154, 0.3);
+}
+
+
+
+
+/* Doctor Cards and Content Area: /* 
+/* Use flexbox for displaying doctor cards  /* 
+/* Ensure responsive behavior for smaller devices  /* 
+
+
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+    gap: 40px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* not too big on bog screens */
+    margin: 0 auto;
+}
+
+.doctor-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden; /* round corners pictures */
+}
+
+.doctor-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+
+@media (max-width: 768px) {
+    .#content {
+        gap: 20px;
+        padding: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.doctor-card { 
+        padding: 15px;
+}
+

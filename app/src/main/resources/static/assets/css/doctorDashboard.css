@@ -1,0 +1,276 @@
+/* This is the style sheet for the doctorDashboard.html */
+
+
+/* Global Styling & Reset */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+
+/* Body and HTML styled for full height and use Ribito font */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Fallback */
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+/* Layout:  */
+/* Use .wrapper as a vertical flex container */
+/* Space and align .main-content elements for search, filters, and the table  */
+
+.main-content .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    width: 100%;
+    max-width: 1000px; 
+    padding: 2rem;
+    gap: 20px; 
+
+}
+
+.table-container {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95); 
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+}
+
+/* Table Styling (`table`)*/
+/* Make the table full width (`100%`). */
+/* Collapse borders for clean lines. */
+/* Use a `sans-serif` font. */
+/* Add `20px` top margin for spacing. */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    text-align: left;
+    margin-top: 20px;
+}
+
+
+/* Table Header (`.table-header`)*/
+/* Set font size to `24px` for clear emphasis. */
+/* Use a dark real color (`#015c5d`) for consistency with the theme. */
+/* Add `30px` bottom margin and remove right margin. */
+
+th {
+    background-color: #015c5d;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 24px; /* very large */
+    margin-right: 0;
+    margin-bottom: 30px;
+    text-align: center; 
+}
+
+/* Table Head (`thead`) */
+/* Set a very light dark background (`#33333310`) for header row. */
+/* Use white text color (`#fff`). */
+
+/* Table Cells (`td, th`)*/
+/* Apply padding of `12px 16px` for spacing. */
+/* Center-align the text. */
+/* Add a subtle bottom border (`1px solid #ddd`). */
+
+/* Table Row Styling */
+/* Alternate row colors for better readability: */
+/* Even rows: semi-transparent light grey (`#f9f9f959`). */
+/* Odd rows: soft white background (`#ffffffc0`). */
+/* On hover: highlight row with a light teal overlay (`#015c5d39`). */
+
+
+thead tr {
+    background-color: #33333310;  /* Cannot read */
+    color: #fff;  
+}
+
+td, th {
+    padding: 12px 16px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f959; 
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffffc0;
+}
+
+tbody tr:hover {
+    background-color: #015c5d39; 
+    transition: background-color 0.2s ease; 
+    cursor: default;
+}
+
+
+/* Prescription Button (`.prescription-btn`) */
+/* Set size to `30px x 30px`.  */
+/* Make it interactive with a pointer cursor.  */
+/* Add transition effects for scale and brightness on hover.  */
+/* On hover:  */
+/* 	Slightly enlarge (`scale(1.1)`)  */
+/* 	Brighten appearance  */
+/* 	On click: slightly shrink (`scale(0.95)`).  */
+/* 	Button hover: background color shift (#015c5d → #017d7e)  */
+/* ??? was not defined */
+
+
+
+.prescription-btn {
+    width: 30px;
+    height: 30px;
+    background-color: #015c5d; 
+    border: none;
+    border-radius: 6px; 
+    
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out; 
+}
+
+
+.prescription-btn:hover {
+    background-color: #017d7e;    
+    filter: brightness(1.2);      
+    transform: scale(1.1);        
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.prescription-btn:active {
+    transform: scale(0.95);      
+    filter: brightness(0.9);      
+}
+
+
+
+/* No Record Message (`.noPatientRecord`) */
+/* Use a `16px` italic grey font to indicate no data gently.  */
+/* ??? was not defined */
+
+.noPatientRecord {
+    font-size: 16px;           
+    font-style: italic;        
+    text-align: center;        
+    padding: 30px;                       
+}
+
+
+
+/* Today Button (`.today-btn`)**
+/* Add right margin (`10px`).  */
+/* Add padding (`10px`).  */
+/* Set background color to teal green (`#015c5d`).  */
+/* Button hover: background color shift (#015c5d → #017d7e)  */
+/* ??? name was not defined */
+
+.today-btn {
+    margin-right: 10px;        
+    padding: 10px 20px;        
+    background-color: #015c5d;
+    color: #ffffff;           
+    border: none;
+    border-radius: 6px;        
+    font-family: sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.today-btn:hover {
+    background-color: #017d7e; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Date Picker (`.date-picker`)**
+/* Add left margin (`10px`) and top margin (`13px`).  */
+/* Round corners with `8px` radius.  */
+/* Add padding (`10px`) and set fixed height (`30px`).  */
+
+
+.date-picker {
+    margin-left: 10px;         
+    margin-top: 13px;          
+    border-radius: 8px;        
+    padding: 10px;             
+    height: 30px;              
+    cursor: pointer;
+}
+
+.date-picker:focus {
+    border-color: #015c5d;     
+    box-shadow: 0 0 5px rgba(1, 92, 93, 0.2);
+}
+
+
+
+
+
+/* Responsive Design: */
+/* Mobile-friendly layout using flexible widths */
+/* Add media queries to adjust font sizes and layout for small screens */*
+
+
+
+@media (max-width: 600px) {
+    .inputSection,
+    .filterSection,
+    .tableSection {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    }
+
+    .prescription-btn, 
+    .date-picker, 
+    .today-btn {
+        max-width: 100%;    
+        height: 45px;       
+        margin: 5px 0; 
+    }
+
+    .table-container {
+        overflow-x: auto;   
+        -webkit-overflow-scrolling: touch; 
+    }
+
+    table {
+        min-width: 600px;   
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

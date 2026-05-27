@@ -1,0 +1,343 @@
+/* This is the style sheet for the index.html */
+
+
+/* Global Styling & Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+/* Body and HTML styled for full height and use Ribito font */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Fallback*/
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* Main Content Wrapper*/
+/* Sets the layout to be a flex column, ensuring the main content grows to take available space.*/
+/* Main Content */
+/* .main-content has a background image with properties for size, position, and attachment (fixed background that doesn’t scroll). */
+/* The content is centered and aligned with the flexbox model. */
+/* Header & Buttons */
+/* Styled for large, bold text with a specific color and font family. */
+/* Buttons are centered and styled with background color, padding, rounded corners, and hover effects to change background color. */
+/* .header styles logo and nav items for a clean and responsive layout. */
+/* 7. Interactive styles*/
+/* Buttons, inputs are styled with hover and focus effects for interactivity. */
+/* 5. Modal snd Button Styling */
+/* Modal and button interaction styles include close button (.close), hover effects, and modal positioning. */
+/* 6. Footer mit Flexbox Sectioning */
+/* Includes .footer with layout for flexbox-based sectioning, responsive for mobile view. */
+
+
+
+/* Main Content */
+
+.main-content {
+	flex-grow: 1;
+	min-height: 100vh; /* container grows when content grows*/
+	
+    background-image: url('../assets/images/background.png');     
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+}
+
+
+.main-content .wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;           
+    padding: 1rem 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h2 {
+   font-size: 3rem;
+   font-weight: bold;	
+   color: #6a1b9a;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+
+
+/* Buttons */
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+	gap: 10px;
+}
+
+
+
+button {
+    cursor: pointer;
+    transition: 0.3s;
+	background-color: #f0f0f0;
+	padding: 12px 20px;
+	font-family: inherit;
+}
+
+
+button:hover {
+    background-color: #e0e0e0;
+ 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+button:focus, input:focus {
+	outline: none;
+    border-color: #6a1b9a;
+    box-shadow: 0 0 8px rgba(106, 27, 154, 0.4); 
+    background-color: #fff;
+}
+
+
+/* Specific styles are included for .dashboard-btn, .input-field, .select-dropdown, .checkbox-group, and more for a clean UI experience. */
+
+
+.dashboard-btn, .input-field, .select-dropdown, .checkbox-group {
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%; 
+    max-width: 300px;
+    margin: 10px 0;
+    transition: all 0.2s ease;
+    outline: none;
+    box-sizing: border-box;   
+    border: 1px solid #ccc;
+}
+
+
+
+
+.dashboard-btn {
+    background-color: #6a1b9a;
+    color: white;
+    font-weight: bold;
+    border: none; 
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+.select-dropdown, .checkbox-group {
+    cursor: pointer;
+}
+
+
+
+
+.checkbox-group {
+    display: flex;      
+    align-items: center; 
+    gap: 10px;
+    border: none;        
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #6a1b9a;
+}
+
+.checkbox-group:hover {
+    color: #6a1b9a;
+}
+
+
+
+
+.dashboard-btn:hover {
+    background-color: #4a148c;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+.input-field:focus, .select-dropdown:focus, .select-dropdown:hover {
+    border-color: #6a1b9a;
+    box-shadow: 0 0 5px rgba(106, 27, 154, 0.3);
+}
+
+
+
+
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    gap: 20px;         
+    padding: 2rem 5%;
+    margin-top: auto; 
+    background-color: #f9f9f9; 
+    border-top: 1px solid #eee;
+
+}
+
+
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+	   text-align: center; 
+        gap: 30px;
+
+    }
+}
+
+
+
+
+
+/* Logo-Styling */
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6a1b9a; 
+    text-decoration: none;
+}
+
+
+
+/* Navigation */
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; 
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 10px;    
+    border-radius: 4px; 
+
+}
+
+nav a:hover {
+    color: #6a1b9a;
+}
+
+
+
+
+
+
+/* Modals */
+
+
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; 
+    
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px; 
+    position: relative; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+
+/* Close */
+
+
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333; 
+    transition: color 0.2s ease, transform 0.2s ease; 
+    line-height: 1; 
+
+}
+
+
+.close:hover {
+    color: #6a1b9a;
+    transform: scale(1.1);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
